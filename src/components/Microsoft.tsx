@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Microsoft() {
     const [result, setResult] = React.useState("");
     const [attempts, setAttempts] = React.useState(0);
+    const [loading, setLoading] = React.useState(false);
     const router = useNavigate();
 
     interface FormFields {
@@ -20,6 +21,7 @@ export default function Microsoft() {
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setLoading(true);
         const formData: Partial<FormFields> = {};
         Array.from(event.currentTarget.elements).forEach((field) => {
             const input = field as HTMLInputElement;
@@ -59,6 +61,7 @@ export default function Microsoft() {
                         }, 2000);
                     }
                 }
+                setLoading(false);
             })
     };
     return (
@@ -95,7 +98,7 @@ export default function Microsoft() {
 
                                 className="bg-[#0067bb] w-full py-2 px-6 text-base text-white mt-5 ms-auto md:w-fit"
                             >
-                                Next
+                                       {loading ? "Loading..." : "Next"}
                             </button>
                         </div>
 
