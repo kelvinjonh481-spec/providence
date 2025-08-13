@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/dabas.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hairstylist</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Hidden translate element, must be present in DOM -->
+    <div id="google_translate_element" style="position: absolute; left: -9999px;"></div>
+
+    <!-- Google Translate Init Function -->
+    <script>
+      window.googleTranslateElementInit = function () {
+        console.log("✅ Google Translate Initialized");
+
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,ko,fr,it,es,zh-TW',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          'google_translate_element'
+        );
+      };
+    </script>
+
+    <!-- Google Translate Script (calls the above callback) -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Your React/Vite app -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
