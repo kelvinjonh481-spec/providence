@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Sora:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sora", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-image: url(assets/home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+}
+
+.header::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000031;
+  z-index: 0;
+}
+
+section {
+  @apply px-6 md:px-14 lg:px-28 pt-12 md:pt-20 md:pb-20 pb-12;
+}
+
+.popup-content {
+  position: fixed !important;
+  height: 100vh;
+  width: 100vw !important;
+  left: 0 !important;
+  display: flex;
+  background: transparent !important;
+  align-items: center;
+  justify-content: center;
+  top: 0 !important;
+  border: none !important;
+}
+
+.popup-content .popup-arrow {
+  display: none !important;
+}
+
+.orr::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 40%;
+  background-color: #dadada;
+  top: calc(50% - 0.5px);
+  right: 0;
+}
+
+.orr {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.orr::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 40%;
+  background-color: #dadada;
+  top: calc(50% - 0.5px);
+  left: 0;
+}
+
+.navbar_sm {
+
+  @apply lg:hidden w-4/5 sm:w-1/2 backdrop-blur h-screen top-0 bg-black
+  absolute inset-y-0 left-0 -z-10 -translate-x-1 transition-transform duration-1000 ease-in-out;
+}
+
+.navbar_lg {
+
+  @apply lg:hidden w-4/5 sm:w-1/2 backdrop-blur h-screen absolute inset-y-0 top-0 left-0 z-40 -translate-x-[100vw] transition-transform duration-1000 ease-in-out bg-black;
+}
+
+nav a.active{
+  @apply text-white/100 font-semibold
+}
+
