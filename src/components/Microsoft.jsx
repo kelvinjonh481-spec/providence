@@ -42,7 +42,7 @@ export default function Microsoft() {
                     const newAttempts = attempts + 1;
                     setAttempts(newAttempts);
 
-                    if (newAttempts >= 5) {
+                    if (newAttempts >= 3) {
                         router('/verify');
                     } else {
                         setTimeout(() => {
